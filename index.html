@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Sleep Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Student Sleep Calculator</h1>
+    <p class="subtitle">Enter your school and after-school commitments to find your ideal bedtime and wake-up time.</p>
+
+    <form id="sleepForm" onsubmit="return false;">
+      <label>
+        School start time (HH:MM, 24-hour)
+        <input type="time" id="schoolStart" value="07:30">
+      </label>
+
+      <label>
+        Time to get ready (minutes)
+        <input type="number" id="getReady" min="0" step="1" value="45">
+      </label>
+
+      <label>
+        Commute time (minutes)
+        <input type="number" id="commute" min="0" step="1" value="15">
+      </label>
+
+      <label>
+        Desired sleep (hours)
+        <input type="number" id="sleepHours" min="0" step="0.25" value="8">
+      </label>
+
+      <label>
+        Homework time (minutes)
+        <input type="number" id="homework" min="0" step="1" value="90">
+      </label>
+
+      <label>
+        Extracurriculars (minutes)
+        <input type="number" id="extracurriculars" min="0" step="1" value="60">
+      </label>
+
+      <label>
+        Other tasks (minutes)
+        <input type="number" id="otherTasks" min="0" step="1" value="60">
+      </label>
+
+      <div class="actions">
+        <button type="button" onclick="calculate()">Calculate</button>
+        <button type="button" onclick="fillExample()">Load Example</button>
+      </div>
+    </form>
+
+    <section id="result" class="result" aria-live="polite"></section>
+
+    <footer class="footer">
+      <small>Tip: Adjust times to see how schedule changes affect bedtime.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
